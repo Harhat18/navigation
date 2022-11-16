@@ -1,17 +1,19 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import First from "./src/pages/First";
-import Second from "./src/pages/Second";
+import Welcome from "./src/pages/Welcome";
+import MemberSign from "./src/pages/MemberSign";
+import MemberResult from "./src/pages/MemberResults";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="FirstScreen" component={First} />
-        <Stack.Screen name="SecondScreen" component={Second} />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="WelcomeScreen" component={Welcome} />
+        <Stack.Screen name="MemberSignScreen" component={MemberSign} />
+        <Stack.Screen name="MemberResultScreen" component={MemberResult} />
       </Stack.Navigator>
     </NavigationContainer>
   );
