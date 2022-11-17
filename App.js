@@ -1,20 +1,21 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Welcome from "./src/pages/Welcome";
-import MemberSign from "./src/pages/MemberSign";
-import MemberResult from "./src/pages/MemberResults";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const Stack = createNativeStackNavigator();
+import Member from "./src/pages/member/Member";
+import Profile from "./src/pages/profile/Profile";
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="WelcomeScreen" component={Welcome} />
-        <Stack.Screen name="MemberSignScreen" component={MemberSign} />
-        <Stack.Screen name="MemberResultScreen" component={MemberResult} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Member" component={Member} />
+        <Tab.Screen name="Profile" component={Profile} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
